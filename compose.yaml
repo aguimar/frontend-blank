@@ -1,0 +1,15 @@
+# compose.yaml
+services:
+  vite_dev:
+    build: .
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+    ports:
+      - "5173:5173"  # Vite's default port
+    environment:
+      - NODE_ENV=development
+    tty: true
+
+volumes:
+  node_modules:
